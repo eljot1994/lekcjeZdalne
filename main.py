@@ -1,16 +1,38 @@
-# This is a sample Python script.
+print('4.1')
+with open('przylad.txt') as liczby:
+    zera = 0
+    for liczba in liczby:
+        licznik_0 = 0
+        licznik_1 = 0
+        for cyfra in liczba:
+            if cyfra == '1':
+                licznik_1 += 1
+            if cyfra == '0':
+                licznik_0 += 1
+        if licznik_0 > licznik_1:
+            zera += 1
+    print(zera)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# 4.2
+print('4.2')
+with open('przylad.txt') as liczby:
+    podzielene_2 = 0
+    podzielene_8 = 0
+    for liczba in liczby:
+        liczba = liczba.split()[0]
+        if liczba[-3:] == '000':
+            podzielene_8 += 1
+        if liczba[-2:] == '00':
+            podzielene_2 += 1
+    print(podzielene_2, podzielene_8)
+print('--4.3--')
+with open('przylad.txt') as liczby:
+    leng = []
+    for liczba in liczby:
+        liczba = liczba.split()[0]
+        leng.append(len(liczba))
+    minimum = min(leng)
+    maksimum = max(leng)
+    print(minimum, maksimum)
+    print([liczba for liczba in liczby if len(liczba.split()[0]) == minimum])
+    print([liczba for liczba in liczby if len(liczba.split()[0]) == maksimum])
