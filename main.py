@@ -1,5 +1,5 @@
 print('4.1')
-with open('przylad.txt') as liczby:
+with open('liczby.txt') as liczby:
     zera = 0
     for liczba in liczby:
         licznik_0 = 0
@@ -15,7 +15,7 @@ with open('przylad.txt') as liczby:
 
 # 4.2
 print('4.2')
-with open('przylad.txt') as liczby:
+with open('liczby.txt') as liczby:
     podzielene_2 = 0
     podzielene_8 = 0
     for liczba in liczby:
@@ -26,7 +26,7 @@ with open('przylad.txt') as liczby:
             podzielene_2 += 1
     print(podzielene_2, podzielene_8)
 print('--4.3--')
-with open('przylad.txt') as liczby:
+with open('liczby.txt') as liczby:
     leng = []
     for liczba in liczby:
         liczba = liczba.split()[0]
