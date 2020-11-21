@@ -28,11 +28,29 @@ with open('liczby.txt') as liczby:
 print('--4.3--')
 with open('liczby.txt') as liczby:
     leng = []
+    tab_liczby = []
     for liczba in liczby:
-        liczba = liczba.split()[0]
-        leng.append(len(liczba))
+        tab_liczby.append(liczba.split()[0])
+        leng.append(len(tab_liczby[-1]))
     minimum = min(leng)
     maksimum = max(leng)
     print(minimum, maksimum)
-    print([liczba for liczba in liczby if len(liczba.split()[0]) == minimum])
-    print([liczba for liczba in liczby if len(liczba.split()[0]) == maksimum])
+    tab_minimum = []
+    tab_maksimum = []
+    for element in tab_liczby:
+        if len(element) == minimum:
+            tab_minimum.append(element)
+        if len(element) == maksimum:
+            tab_maksimum.append(element)
+
+
+    print(tab_minimum)
+    print(tab_maksimum)
+    tab_min = []
+    tab_max = []
+    for i in range(minimum - 1, 1, -1):
+        print(i)
+        for element in tab_minimum:
+            if element[i] == '0':
+                tab_min.append(element)
+    print(tab_min)
