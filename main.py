@@ -12,6 +12,7 @@ with open('liczby.txt') as liczby:
         if licznik_0 > licznik_1:
             zera += 1
     print(zera)
+    liczby.close()
 
 # 4.2
 print('4.2')
@@ -25,13 +26,19 @@ with open('liczby.txt') as liczby:
         if liczba[-2:] == '00':
             podzielene_2 += 1
     print(podzielene_2, podzielene_8)
+    liczby.close()
+
 print('--4.3--')
 with open('liczby.txt') as liczby:
     tab_liczby = []
     for liczba in liczby:
         tab_liczby.append(liczba.split()[0])
+    liczby.close()
 
+    print(tab_liczby.index(min(tab_liczby)),',',min(tab_liczby))
+    print(tab_liczby.index(max(tab_liczby)),',',max(tab_liczby))
+with open('wyniki.txt','w') as wyniki:
+    wyniki.write(str([podzielene_2, podzielene_8]))
+    wyniki.close()
 
-    print(tab_liczby.index(min(tab_liczby)),min(tab_liczby))
-    print(tab_liczby.index(max(tab_liczby)),max(tab_liczby))
 
