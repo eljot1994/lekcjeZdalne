@@ -27,30 +27,11 @@ with open('liczby.txt') as liczby:
     print(podzielene_2, podzielene_8)
 print('--4.3--')
 with open('liczby.txt') as liczby:
-    leng = []
     tab_liczby = []
     for liczba in liczby:
         tab_liczby.append(liczba.split()[0])
-        leng.append(len(tab_liczby[-1]))
-    minimum = min(leng)
-    maksimum = max(leng)
-    print(minimum, maksimum)
-    tab_minimum = []
-    tab_maksimum = []
-    for element in tab_liczby:
-        if len(element) == minimum:
-            tab_minimum.append(element)
-        if len(element) == maksimum:
-            tab_maksimum.append(element)
 
 
-    print(tab_minimum)
-    print(tab_maksimum)
-    tab_min = []
-    tab_max = []
-    for i in range(minimum - 1, 1, -1):
-        print(i)
-        for element in tab_minimum:
-            if element[i] == '0':
-                tab_min.append(element)
-    print(tab_min)
+    print(tab_liczby.index(min(tab_liczby)),min(tab_liczby))
+    print(tab_liczby.index(max(tab_liczby)),max(tab_liczby))
+
