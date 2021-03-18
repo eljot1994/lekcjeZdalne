@@ -55,7 +55,19 @@ for woj in kraina:
             licznik_p += 1
             break
     ludnosc_t.append([woj[0], ludnosc, tempo])
-print(ludnosc_t)
+ludnosc = 0
+maksimum = ludnosc_t[0]
+for rekord in ludnosc_t:
+    ludnosc += rekord[1]
+    if rekord[1] > maksimum[1]:
+        maksimum = rekord
+
+print(maksimum[0])
+print(ludnosc)
 print(licznik_p)
+file = open('Wynik2.txt','w')
+file.write(str(maksimum[0]))
+file.close()
 #sprawdzic, gdzie jest najw ludnosc i zsumowac
+
 
